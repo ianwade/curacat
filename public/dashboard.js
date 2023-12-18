@@ -2,9 +2,9 @@
 fetch('/get-token')
     .then(response => response.json())
     .then(data => {
-        const { token, user_id } = data;
-        requestInitialData(token, user_id);
-        // Use accessToken and userId in your client-side script
+        const { token, user_id, user_displayname } = data;
+        console.log(data);
+        //requestInitialData(token, user_id, user_displayname);
     })
     .catch(error => console.error('Error fetching access token:', error));
 
