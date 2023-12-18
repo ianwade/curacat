@@ -26,6 +26,7 @@ const scopes = ['user-library-read user-read-playback-state user-read-private us
 
 app.listen(process.env.PORT, () => {
     console.log(`\nServer is running on port ${process.env.PORT}\n`);
+    console.log(`${process.env.REDIRECT_URI}`);
 });
 
 //Landing page
