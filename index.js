@@ -160,19 +160,10 @@ async function user_playback(user, progress) {
     try {
         let track = await spotify.fetchPlaybackState(user.access_token);
 
-        //while(track.error) {
-
-          //if(retries == max_retries)
-            //return "PROBLEM!!!";
-        if(track.error) {
+        if(track.error && track.error.status === 401) {
           let new_token = await refresh_access_token(user);
           track = await spotify.fetchPlaybackState(new_token);
         }
-
-          //retries++;
-        //}
-
-        //let played_ratio = track.progress_ms / track.item.duration_ms;
 
         if (track.is_playing && track != {})
             await database.add_track(user, track);
