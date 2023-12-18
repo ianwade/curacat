@@ -154,14 +154,12 @@ async function refresh_access_token(user) {
 // if access token expires, this will request a new one
 async function user_playback(user, progress) {
 
-  const max_retries = 10;
-  let retries = 0;
-
     try {
         let track = await spotify.fetchPlaybackState(user.access_token);
 
         if(track.error && track.error.status === 401) {
           let new_token = await refresh_access_token(user);
+          user.access_token = new_token;
           track = await spotify.fetchPlaybackState(new_token);
         }
 
