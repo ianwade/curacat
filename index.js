@@ -24,9 +24,9 @@ const scopes = ['user-library-read user-read-playback-state user-read-private us
 
 /* USER AUTHENICATION & REGISTRATION FOR APP */
 
-/*app.listen(process.env.PORT, () => {
-    console.log(`\nServer is running on http://localhost:${process.env.PORT}\n`);
-});*/
+app.listen(process.env.PORT, () => {
+    console.log(`\nServer is running on port ${process.env.PORT}\n`);
+});
 
 //Landing page
 app.get('/', (req, res) => {
