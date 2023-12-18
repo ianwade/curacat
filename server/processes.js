@@ -1,3 +1,5 @@
+import * as database from './database';
+import * as database from './spotify';
 /* CONTINUOUS FUNCTIONS FOR FETCHING USER PLAYBACK */
 
 //implement a way to stop collection of playback on the fly
