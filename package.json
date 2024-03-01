@@ -12,7 +12,7 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "moment": "^2.29.4",
-    "mysql2": "^3.6.5",
+    "mysql2": "^3.9.2",
     "querystring": "^0.2.1",
     "yarn": "^1.22.21"
   },
